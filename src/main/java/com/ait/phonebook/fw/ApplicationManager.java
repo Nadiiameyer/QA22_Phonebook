@@ -1,23 +1,32 @@
 package com.ait.phonebook.fw;
 
-import com.ait.phonebook.model.User;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 
-public class ApplicationManager extends HomePageHelper {
-static WebDriver driver;
-UserHelper user;
-ContactHelper contact;
-HeaderHelper header;
-HomePageHelper home;
+public class ApplicationManager {
 
-    public ApplicationManager() {
-        super(driver);
+    static WebDriver driver;
+    String browser;
+
+    UserHelper user;
+    ContactHelper contact;
+    HeaderHelper header;
+    HomePageHelper home;
+
+    Logger logger = LoggerFactory.getLogger(ApplicationManager.class);
+
+    public ApplicationManager(String browser) {
+        this.browser = browser;
     }
+
 
     public UserHelper getUser() {
         return user;
@@ -35,45 +44,39 @@ HomePageHelper home;
         return home;
     }
 
-    public ApplicationManager(UserHelper user) {
-        super(driver);
-    }
-
-    public ApplicationManager(HomePageHelper home) {
-     super(driver);
-    }
-
-    public ApplicationManager(WebDriver driver, HeaderHelper header) {
-        super(driver);
-        this.header = header;
-    }
-
     public void init() {
         System.err.close();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("remote-allow-origins=*");
-        driver = new ChromeDriver(options);
+        if (browser.equalsIgnoreCase("chrome")) {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("remote-allow-origins=*");
+            driver = new ChromeDriver(options);
+            logger.info("All tests starts in Chrome Browser");
+
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            driver = new FirefoxDriver();
+            logger.info("All tests starts in Firefox Browser");
+
+        } else if (browser.equalsIgnoreCase("edge")) {
+            EdgeOptions options = new EdgeOptions();
+            options.addArguments("remote-allow-origins=*");
+            driver = new EdgeDriver(options);
+            logger.info("All tests starts in Edge Browser");
+        }
+
         driver.get("https://telranedu.web.app");
+
+        logger.info("Current URL --> " + driver.getCurrentUrl());
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         user = new UserHelper(driver);
         contact = new ContactHelper(driver);
-        header=new HeaderHelper(driver);
+        header = new HeaderHelper(driver);
         home = new HomePageHelper(driver);
     }
 
     public void stop() {
         driver.quit();
-    }
-
-    public void clickOnLoginButton() {
-        click(By.xpath("//button[contains(.,'Login')]"));
-    }
-
-    public void fillLoginRegForm(User user) {
-        type(By.cssSelector("[placeholder='Email']"), user.getEmail());
-        type(By.cssSelector("[placeholder='Password']"), user.getPassword());
     }
 
 }

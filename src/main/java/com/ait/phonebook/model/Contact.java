@@ -1,44 +1,21 @@
 package com.ait.phonebook.model;
 
 public class Contact {
-  private   String name;
-  private  String surename;
- private  String phone;
-  private  String email;
-  private  String address;
-   private String desc;
 
-    public String getName() {
-        return name;
-    }
-
-    public String getSurename() {
-        return surename;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
+    private String name;
+    private String surName;
+    private String phone;
+    private String email;
+    private String address;
+    private String desc;
 
     public Contact setName(String name) {
         this.name = name;
         return this;
     }
 
-    public Contact setSurename(String surename) {
-        this.surename = surename;
+    public Contact setSurName(String surName) {
+        this.surName = surName;
         return this;
     }
 
@@ -62,11 +39,35 @@ public class Contact {
         return this;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSurName() {
+        return surName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
     @Override
     public String toString() {
-        return "{" +
+        return "Contact{" +
                 "name='" + name + '\'' +
-                ", surename='" + surename + '\'' +
+                ", surName='" + surName + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +

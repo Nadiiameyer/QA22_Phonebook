@@ -19,32 +19,33 @@ public class ContactHelper extends BaseHelper{
 
     public void addContact(Contact contact) {
         type(By.cssSelector("input:nth-child(1)"), contact.getName());
-        type(By.cssSelector("input:nth-child(2)"), contact.getSurename());
+        type(By.cssSelector("input:nth-child(2)"), contact.getSurName());
         type(By.cssSelector("input:nth-child(3)"), contact.getPhone());
         type(By.cssSelector("input:nth-child(4)"), contact.getEmail());
         type(By.cssSelector("input:nth-child(5)"), contact.getAddress());
         type(By.cssSelector("input:nth-child(6)"), contact.getDesc());
     }
-    public void removeContact() {
-    click(By.cssSelector(".contact-item_card__2SOIM"));
-
-    click(By.xpath("//button[contains(.,'Remove')]"));
-    }
-    public int sizeOfContacts(){
-        if (driver.findElements(By.cssSelector(".contact-item_card__2SOIM")).size()>0){
-            return driver.findElements(By.cssSelector(".contact-item_card__2SOIM")).size();
-        }else
-            return 0;
-    }
-
 
     public boolean isContactCreated(String text) {
-        List<WebElement> contacts = ApplicationManager.driver.findElements(By.cssSelector("h2"));
+        List<WebElement> contacts = driver.findElements((By.cssSelector("h2")));
 
         for (WebElement el : contacts) {
             if (el.getText().contains(text))
                 return true;
         }
         return false;
+    }
+
+    public void removeContact() {
+        click(By.cssSelector(".contact-item_card__2SOIM"));
+        //click on Remove button
+        click(By.xpath("//button[contains(.,'Remove')]"));
+    }
+
+    public int sizeOfContacts() {
+        if (driver.findElements(By.cssSelector(".contact-item_card__2SOIM")).size() > 0) {
+            return driver.findElements(By.cssSelector(".contact-item_card__2SOIM")).size();
+        } else
+            return 0;
     }
 }
