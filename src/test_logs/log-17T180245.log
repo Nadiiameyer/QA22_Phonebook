@@ -1,0 +1,20 @@
+854  [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  /Users/didihenkelmann/Desktop/QA22/QA22_Phonebook/src/test/resources/testng.xml
+
+6169 [main] INFO  c.a.phonebook.fw.ApplicationManager -- All tests starts in Chrome Browser
+6851 [main] INFO  c.a.phonebook.fw.ApplicationManager -- Current URL --> https://telranedu.web.app/home
+7364 [main] INFO  com.ait.tests.TestBase -- Start test openHomePageTest with data: []
+7402 [main] INFO  com.ait.tests.TestBase -- PASSED: openHomePageTest
+7402 [main] INFO  com.ait.tests.TestBase -- ======================================================
+7405 [main] INFO  com.ait.tests.TestBase -- Start test removeContactTest with data: []
+13801 [main] INFO  com.ait.tests.TestBase -- PASSED: removeContactTest
+13801 [main] INFO  com.ait.tests.TestBase -- ======================================================
+13804 [main] INFO  com.ait.tests.TestBase -- Start test loginRegisteredUserPositiveTest with data: []
+24900 [main] INFO  com.ait.tests.TestBase -- PASSED: loginRegisteredUserPositiveTest
+24900 [main] INFO  com.ait.tests.TestBase -- ======================================================
+24901 [main] INFO  com.ait.tests.TestBase -- Start test loginRegisteredUserWithInvalidPasswordNegativeTest with data: []
+36101 [main] INFO  com.ait.tests.TestBase -- PASSED: loginRegisteredUserWithInvalidPasswordNegativeTest
+36102 [main] INFO  com.ait.tests.TestBase -- ======================================================
+36104 [main] INFO  com.ait.tests.TestBase -- Start test loginRegisteredUserWithoutPasswordNegativeTest with data: []
+37219 [main] INFO  com.ait.tests.TestBase -- PASSED: loginRegisteredUserWithoutPasswordNegativeTest
+37221 [main] INFO  com.ait.tests.TestBase -- ======================================================

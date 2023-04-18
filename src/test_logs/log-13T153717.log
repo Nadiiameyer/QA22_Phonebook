@@ -1,0 +1,8 @@
+866  [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  /Users/didihenkelmann/Library/Caches/JetBrains/IdeaIC2022.2/temp-testng-customsuite.xml
+
+8570 [main] INFO  c.a.phonebook.fw.ApplicationManager -- All tests starts in Chrome Browser
+9349 [main] INFO  c.a.phonebook.fw.ApplicationManager -- Current URL --> https://telranedu.web.app/home
+9845 [main] INFO  com.ait.tests.TestBase -- Start test testElementone with data: []
+9855 [main] INFO  com.ait.tests.TestBase -- PASSED: testElementone
+9855 [main] INFO  com.ait.tests.TestBase -- ======================================================

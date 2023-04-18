@@ -1,0 +1,8 @@
+806  [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  /Users/didihenkelmann/Desktop/QA22/QA22_Phonebook/src/test/resources/quick.xml
+
+8120 [main] INFO  c.a.phonebook.fw.ApplicationManager -- All tests starts in Chrome Browser
+8890 [main] INFO  c.a.phonebook.fw.ApplicationManager -- Current URL --> https://telranedu.web.app/home
+9395 [main] INFO  com.ait.tests.TestBase -- Start test openHomePageTest with data: []
+9437 [main] INFO  com.ait.tests.TestBase -- PASSED: openHomePageTest
+9437 [main] INFO  com.ait.tests.TestBase -- ======================================================
